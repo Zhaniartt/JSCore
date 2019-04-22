@@ -1,0 +1,21 @@
+<ul id="items">
+    <li>first item</li>
+    <li>second item</li>
+    <li>third item</li>
+  </ul>
+  <textarea id="result"></textarea>
+  <br>
+  <button onclick="extractText()">Extract Text</button>
+  <script>
+    function extractText() {
+      let items = Array.from(document.querySelectorAll('#items li'))
+      let [item1,item2,item3] = items;
+      let output = []
+      output.push(item1.textContent)
+      output.push(item2.textContent)
+      output.push(item3.textContent)
+      let resultEnd = document.querySelector('#result')
+      resultEnd.textContent = output.join('\n')
+      
+    }
+  </script>
